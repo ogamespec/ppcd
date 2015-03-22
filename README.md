@@ -36,7 +36,7 @@ CHANGELOG:
 
   * 0.01    Initial release. Generic 32/64-bit ISA is implemented and extensively tested.
   * 0.02    Added support for Gekko.
-  * 0.03    Fixed some typos. (SVN [r1](https://code.google.com/p/ppcd/source/detail?r=1))
+  * 0.03    Fixed some typos.
 
 **This project is completed.**
 
