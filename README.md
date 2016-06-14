@@ -1,4 +1,4 @@
-PPCD is very accurate disassembler for PowerPC-based processors. Current supported models are:
+PPCD is very accurate disassembler of PowerPC-based processors ISA. Current supported models are:
 
   * Generic POWERPC-32
   * Generic POWERPC-64
@@ -10,27 +10,27 @@ ppcd-**model** binary
 
 Output will go to stdout.
 
-Credits: This program was written by org between 2006-2007 for Gekko debugger. PPCD is free opensource. You can use it in your applications without mention.
+Credits: This program has written by org between 2006-2007 for Gekko debugger. PPCD is free opensource. You can use it in your applications without mention.
 
-Let me know, if you made support for more processors in PPCD.
+Let me know, if you made support for more processors.
 
 How to use sourcecode:
 
 You need to add ppcd.cpp/ppcd.h and Commondefs (data types) to your project. Call PPCDisasm and pass it PPCD\_CB structure with filled "pc" and "instr" parameters. At minimum you can use "mnemonic" and "operands" as output parameters, but if you need more detailed information about disassembled instruction, use "icalss", "immed", "target" and "r":
 
-iclass: Combination of flags which specify instruction "class" or category. See ppcd.h for list of flags. Note, many flags can be combined, for example FPU + LDST.
-immed: Immediate value for integer instructions or address displacement for load/store.
-target: "Cooked" absolute branch address (calculated from input "pc" parameter) OR mask for rlwinm-like instructions.
-r: Index list for register operands in appropriate order.
+  * iclass: Combination of flags which specify instruction "class" or category. See ppcd.h for list of flags. Note, many flags can be combined, for example FPU + LDST.
+  * immed: Immediate value for integer instructions or address displacement for load/store.
+  * target: "Cooked" absolute branch address (calculated from input "pc" parameter) OR mask for rlwinm-like instructions.
+  * r: Index list for register operands in appropriate order.
 
 As option there is PPCDisasmSimple call for quick use. Just call PPCDisasmSimple(pc, instr) and it will return formatted string.
 
 ppcd.cpp compilation tips:
 
-If you need uppercase: define UPPERCASE
-If you need another hexademical numbers representation: See HEX1 and HEX2
-If you dont need spaces between commas: redefine COMMA as ","
-If you dont need simplified mnemonics (highly not recommended :)): undefine SIMPLIFIED
+  * If you need uppercase: define UPPERCASE
+  * If you need another hexademical numbers representation: See HEX1 and HEX2
+  * If you dont need spaces between commas: redefine COMMA as ","
+  * If you dont need simplified mnemonics (highly not recommended :)): undefine SIMPLIFIED
 
 CHANGELOG:
 
